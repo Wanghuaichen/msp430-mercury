@@ -1,0 +1,13 @@
+一、历史记录在Flash中的存放：
+	1、flash第1-8页存放的分别为通道1-8的上下线历史记录值。
+	2、每个通道可以存储50条历史记录。对应的结构体如下：
+	typedef struct {
+		char mn[14];
+		char head;
+		struct {
+			char datetime[14];
+			char flag;
+			char next;
+			char prev;
+		} record[50];
+	} record_t;
